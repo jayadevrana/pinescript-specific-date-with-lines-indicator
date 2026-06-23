@@ -1,0 +1,109 @@
+//@version=6
+indicator('Specific Date with lines', overlay = true)
+
+// Input: Specify the target date for the high and low
+target_date = input.time(timestamp('2025-01-23 00:00'), '1st')
+target_date1 = input.time(timestamp('2025-01-22 00:00'), '2nd')
+target_date2 = input.time(timestamp('2025-01-21 00:00'), '3rd')
+target_date3 = input.time(timestamp('2025-01-20 00:00'), '4th')
+target_date4 = input.time(timestamp('2025-01-17 00:00'), '5th')
+
+
+// Function to extract the date component from the timestamp
+is_target_date = year == year(target_date) and month == month(target_date) and dayofmonth == dayofmonth(target_date)
+
+
+// Initialize variables for the lines and labels
+var line high_line = na
+var line low_line = na
+var label high_label = na
+var label low_label = na
+
+hig_h = request.security(syminfo.tickerid, 'D', high)
+lo_w = request.security(syminfo.tickerid, 'D', low)
+
+// Draw lines and labels only on the target date
+if is_target_date
+    high_line := line.new(x1 = bar_index, y1 = hig_h, x2 = bar_index + 1, y2 = hig_h, color = color.green, width = 2, extend = extend.right)
+    line.delete(high_line[1])
+    low_line := line.new(x1 = bar_index, y1 = lo_w, x2 = bar_index + 1, y2 = lo_w, color = color.red, width = 2, extend = extend.right)
+    line.delete(low_line[1])
+
+// Function to extract the date component from the timestamp
+is_target_date1 = year == year(target_date1) and month == month(target_date1) and dayofmonth == dayofmonth(target_date1)
+
+
+// Initialize variables for the lines and labels
+var line high_line1 = na
+var line low_line1 = na
+var label high_label1 = na
+var label low_label1 = na
+
+hig_h1 = request.security(syminfo.tickerid, 'D', high)
+lo_w1 = request.security(syminfo.tickerid, 'D', low)
+
+// Draw lines and labels only on the target date
+if is_target_date1
+    high_line1 := line.new(x1 = bar_index, y1 = hig_h1, x2 = bar_index + 1, y2 = hig_h1, color = color.yellow, width = 2, extend = extend.right)
+    line.delete(high_line1[1])
+    low_line1 := line.new(x1 = bar_index, y1 = lo_w1, x2 = bar_index + 1, y2 = lo_w1, color = color.maroon, width = 2, extend = extend.right)
+    line.delete(low_line1[1])
+
+// Function to extract the date component from the timestamp
+is_target_date2 = year == year(target_date2) and month == month(target_date2) and dayofmonth == dayofmonth(target_date2)
+
+
+// Initialize variables for the lines and labels
+var line high_line2 = na
+var line low_line2 = na
+var label high_label2 = na
+var label low_label2 = na
+
+hig_h2 = request.security(syminfo.tickerid, 'D', high)
+lo_w2 = request.security(syminfo.tickerid, 'D', low)
+
+// Draw lines and labels only on the target date
+if is_target_date2
+    high_line2 := line.new(x1 = bar_index, y1 = hig_h2, x2 = bar_index + 1, y2 = hig_h2, color = color.yellow, width = 2, extend = extend.right)
+    line.delete(high_line2[1])
+    low_line2 := line.new(x1 = bar_index, y1 = lo_w2, x2 = bar_index + 1, y2 = lo_w2, color = color.maroon, width = 2, extend = extend.right)
+    line.delete(low_line2[1])
+
+// Function to extract the date component from the timestamp
+is_target_date3 = year == year(target_date3) and month == month(target_date3) and dayofmonth == dayofmonth(target_date3)
+
+
+// Initialize variables for the lines and labels
+var line high_line3 = na
+var line low_line3 = na
+var label high_label3 = na
+var label low_label3 = na
+
+hig_h3 = request.security(syminfo.tickerid, 'D', high)
+lo_w3 = request.security(syminfo.tickerid, 'D', low)
+
+// Draw lines and labels only on the target date
+if is_target_date3
+    high_line3 := line.new(x1 = bar_index, y1 = hig_h3, x2 = bar_index + 1, y2 = hig_h3, color = color.yellow, width = 2, extend = extend.right)
+    line.delete(high_line3[1])
+    low_line1 := line.new(x1 = bar_index, y1 = lo_w3, x2 = bar_index + 1, y2 = lo_w3, color = color.maroon, width = 2, extend = extend.right)
+    line.delete(low_line3[1])
+
+// Function to extract the date component from the timestamp
+is_target_date4 = year == year(target_date4) and month == month(target_date4) and dayofmonth == dayofmonth(target_date4)
+
+
+// Initialize variables for the lines and labels
+var line high_line4 = na
+var line low_line4 = na
+
+
+hig_h4 = request.security(syminfo.tickerid, 'D', high)
+lo_w4 = request.security(syminfo.tickerid, 'D', low)
+
+// Draw lines and labels only on the target date
+if is_target_date4
+    high_line4 := line.new(x1 = bar_index, y1 = hig_h4, x2 = bar_index + 1, y2 = hig_h4, color = color.yellow, width = 2, extend = extend.right)
+    line.delete(high_line4[1])
+    low_line4 := line.new(x1 = bar_index, y1 = lo_w4, x2 = bar_index + 1, y2 = lo_w4, color = color.maroon, width = 2, extend = extend.right)
+    line.delete(low_line4[1])
